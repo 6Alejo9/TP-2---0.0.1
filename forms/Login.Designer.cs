@@ -1,6 +1,6 @@
 ﻿namespace TP_2___0._0._1
 {
-    partial class Login
+    partial class frmLogin
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -50,7 +50,7 @@
             // lblContraseña
             // 
             this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Location = new System.Drawing.Point(28, 38);
+            this.lblContraseña.Location = new System.Drawing.Point(28, 55);
             this.lblContraseña.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(61, 13);
@@ -60,7 +60,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(118, 25);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(76, 20);
             this.txtUsuario.TabIndex = 4;
@@ -68,42 +68,44 @@
             // txtConstraseña
             // 
             this.txtConstraseña.Location = new System.Drawing.Point(118, 48);
-            this.txtConstraseña.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtConstraseña.Margin = new System.Windows.Forms.Padding(2);
             this.txtConstraseña.Name = "txtConstraseña";
             this.txtConstraseña.Size = new System.Drawing.Size(76, 20);
             this.txtConstraseña.TabIndex = 5;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(86, 123);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAceptar.Location = new System.Drawing.Point(86, 124);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(125, 32);
             this.btnAceptar.TabIndex = 6;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnRecupero
             // 
             this.btnRecupero.Location = new System.Drawing.Point(86, 160);
-            this.btnRecupero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRecupero.Margin = new System.Windows.Forms.Padding(2);
             this.btnRecupero.Name = "btnRecupero";
             this.btnRecupero.Size = new System.Drawing.Size(125, 33);
             this.btnRecupero.TabIndex = 7;
             this.btnRecupero.Text = "recuperar contraseña";
             this.btnRecupero.UseVisualStyleBackColor = true;
+            this.btnRecupero.Click += new System.EventHandler(this.btnRecupero_Click);
             // 
             // btnRegister
             // 
             this.btnRegister.Location = new System.Drawing.Point(86, 198);
-            this.btnRegister.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(125, 33);
             this.btnRegister.TabIndex = 8;
             this.btnRegister.Text = "Registrase";
             this.btnRegister.UseVisualStyleBackColor = true;
             // 
-            // Login
+            // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -115,8 +117,8 @@
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblUsuario);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Login";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "frmLogin";
             this.Text = "Inicio";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

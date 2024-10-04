@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TP_2___0._0._1.forms
 {
-    public partial class Form1 : Form
+    public partial class frmRecupero : Form
     {
-        public Form1()
+        public frmRecupero()
         {
             InitializeComponent();
         }
@@ -23,6 +23,11 @@ namespace TP_2___0._0._1.forms
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmRecupero_Load(object sender, EventArgs e)
         {
 
         }
