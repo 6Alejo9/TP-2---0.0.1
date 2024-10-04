@@ -1,6 +1,6 @@
 ﻿namespace TP_2___0._0._1
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         /// Variable del diseñador necesaria.

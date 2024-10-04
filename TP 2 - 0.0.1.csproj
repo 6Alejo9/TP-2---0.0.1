@@ -46,25 +46,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="forms\Form1.cs">
+    <Compile Include="forms\Registrar Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="forms\Registrar Usuario.Designer.cs">
+      <DependentUpon>Registrar Usuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\Form2.cs">
+    <Compile Include="forms\Recupero Contraseña.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="forms\Recupero Contraseña.Designer.cs">
+      <DependentUpon>Recupero Contraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Logic\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="forms\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="forms\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="forms\Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Recupero Contraseña.resx">
+      <DependentUpon>Recupero Contraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Registrar Usuario.resx">
+      <DependentUpon>Registrar Usuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
