@@ -1,6 +1,6 @@
 ﻿namespace TP_2___0._0._1.forms
 {
-    partial class Register
+    partial class frmRegistrar
     {
         /// <summary>
         /// Required designer variable.
@@ -107,7 +107,7 @@
             this.button2.Text = "¿ Ya Estas Registrado ?";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // Register
+            // frmRegistrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -121,8 +121,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Register";
-            this.Text = "Form2";
+            this.Name = "frmRegistrar";
+            this.Text = "Registracion";
+            this.Load += new System.EventHandler(this.Register_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

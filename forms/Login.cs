@@ -30,9 +30,19 @@ namespace TP_2___0._0._1
             recupero.Show();
         }
 
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            frmRegistrar registrar = new frmRegistrar();
+            this.Hide();
+            registrar.Show();
+        }
+        
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\ruta\a\tu\base_de_datos.accdb";
         }
+
+
     }
+
 }
