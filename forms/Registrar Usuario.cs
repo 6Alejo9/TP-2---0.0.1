@@ -16,5 +16,10 @@ namespace TP_2___0._0._1.forms
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
