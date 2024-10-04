@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace TP_2___0._0._1
 {
-    public partial class Inicio : Form
+    public partial class frmInicio : Form
     {
-        public Inicio()
+        public frmInicio()
         {
             InitializeComponent();
         }
 
         private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
         {
 
         }
