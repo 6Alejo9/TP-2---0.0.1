@@ -41,7 +41,7 @@ namespace TP_2___0._0._1
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             // Cadena de conexión a la base de datos de Access
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Ematp\source\repos\6Alejo9\TP-2---0.0.1.BD_TP_grupal_parte_2.accdb";
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Ematp\source\repos\6Alejo9\TP-2---0.0.1\BD_TP_grupal_parte_2.accdb";
 
             // Crear la consulta SQL para validar el usuario y la contraseña
             string query = "SELECT COUNT(*) FROM Usuarios WHERE NombreUsuario = @username AND Contraseña = @password";
