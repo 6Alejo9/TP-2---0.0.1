@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace TP_2___0._0._1
 {
     public partial class frmInicio : Form
@@ -52,6 +54,11 @@ namespace TP_2___0._0._1
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
 
         }
     }

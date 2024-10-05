@@ -67,15 +67,16 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(523, 359);
+            this.tabPage2.Size = new System.Drawing.Size(523, 364);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Opciones Administrador";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // dgvTabla
             // 
             this.dgvTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTabla.Location = new System.Drawing.Point(182, 48);
+            this.dgvTabla.Location = new System.Drawing.Point(210, 24);
             this.dgvTabla.Name = "dgvTabla";
             this.dgvTabla.Size = new System.Drawing.Size(289, 150);
             this.dgvTabla.TabIndex = 4;
