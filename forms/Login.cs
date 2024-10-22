@@ -68,9 +68,9 @@ namespace TP_2___0._0._1
                         if (count > 0)
                         {
                             // Si hay coincidencias, el inicio de sesión es correcto
-                            frmInicio frminicio = new frmInicio();
+                            frmInicioUsuarios frminiciousuarios = new frmInicioUsuarios();
                             this.Hide();
-                            frminicio.Show();
+                            frminiciousuarios.Show();
                         }
                         else
                         {

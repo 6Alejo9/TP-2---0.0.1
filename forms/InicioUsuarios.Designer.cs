@@ -1,6 +1,6 @@
 ﻿namespace TP_2___0._0._1
 {
-    partial class frmInicio
+    partial class frmInicioUsuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -40,11 +40,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
-            // frmInicio
+            // frmInicioUsuarios
             // 
             this.ClientSize = new System.Drawing.Size(824, 408);
             this.Controls.Add(this.label1);
-            this.Name = "frmInicio";
+            this.Name = "frmInicioUsuarios";
+            this.Load += new System.EventHandler(this.frmInicioUsuarios_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

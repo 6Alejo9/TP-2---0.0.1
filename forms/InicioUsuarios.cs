@@ -14,9 +14,9 @@ using System.Windows.Forms;
 
 namespace TP_2___0._0._1
 {
-    public partial class frmInicio : Form
+    public partial class frmInicioUsuarios : Form
     {
-        public frmInicio()
+        public frmInicioUsuarios()
         {
             InitializeComponent();
         }
@@ -58,6 +58,11 @@ namespace TP_2___0._0._1
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmInicioUsuarios_Load(object sender, EventArgs e)
         {
 
         }

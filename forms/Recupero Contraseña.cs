@@ -26,10 +26,10 @@ namespace TP_2___0._0._1.forms
         private void button1_Click(object sender, EventArgs e)
         {
             //Llamar al metodo dedicado a conectar la base de datos
-            DatabaseConnection DBConnection = new DatabaseConnection ();
+            //DatabaseConnection DBConnection = new DatabaseConnection ();
           
                 // Crear la consulta SQL para validar el usuario y la contraseña
-            string query = "SELECT COUNT(*) FROM Usuarios WHERE Correo_Electronico = @email";
+            //string query = "SELECT COUNT(*) FROM Usuarios WHERE Correo_Electronico = @email";
         }
 
         private void frmRecupero_Load(object sender, EventArgs e)

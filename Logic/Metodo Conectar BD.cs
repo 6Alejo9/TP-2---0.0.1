@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.OleDb;
 using System.Linq;
 using System.Text;
@@ -7,45 +8,31 @@ using System.Threading.Tasks;
 
 namespace TP_2___0._0._1.Logic
 {
-    public class DatabaseConnection
+    public class conexion
     {
-        private string connectionString;
+        public OleDbConnection CN = OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; Data Sourse = DataDirectory BD_TP_grupal_parte_2");
 
-        // Constructor: Define la cadena de conexión al inicializar el objeto
-        public DatabaseConnection()
+        private static OleDbConnection OleDbConnection(string v)
         {
-            connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Alejo\Desktop\BD_TP_grupal_parte_2.accdb";
+            throw new NotImplementedException();
         }
 
-        // Método para obtener la conexión a la base de datos
-        public OleDbConnection Connect()
+        public OleDbConnection AbrirConexion()
         {
-            try
+            if (CN.State == ConnectionState.Open)
             {
-                OleDbConnection connection = new OleDbConnection(connectionString);
-                connection.Open();
-                Console.WriteLine("Conexión exitosa.");
-                return connection;
+                CN.Close();
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error al conectar con la base de datos: " + ex.Message);
-                return null;
-            }
+            CN.Open();
+            return CN;
+
         }
 
-        // Método para cerrar la conexión
-        public void CloseConnection(OleDbConnection connection)
+        public OleDbConnection CerrarConexion()
         {
-            if (connection != null && connection.State == System.Data.ConnectionState.Open)
-            {
-                connection.Close();
-                Console.WriteLine("Conexión cerrada.");
-            }
+            CN.Open();
+            return CN;
         }
+
     }
-
-
-
 }
-
