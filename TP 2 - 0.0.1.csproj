@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="forms\InicioAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\InicioAdministrador.Designer.cs">
+      <DependentUpon>InicioAdministrador.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\Registrar Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,20 +70,23 @@
     <Compile Include="forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\Inicio.cs">
+    <Compile Include="forms\InicioUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\Inicio.Designer.cs">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <Compile Include="forms\InicioUsuarios.Designer.cs">
+      <DependentUpon>InicioUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Logic\Metodo Conectar BD.cs" />
     <Compile Include="Logic\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="forms\InicioAdministrador.resx">
+      <DependentUpon>InicioAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\Inicio.resx">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <EmbeddedResource Include="forms\InicioUsuarios.resx">
+      <DependentUpon>InicioUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Recupero Contraseña.resx">
       <DependentUpon>Recupero Contraseña.cs</DependentUpon>

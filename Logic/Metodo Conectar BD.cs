@@ -14,7 +14,7 @@ namespace TP_2___0._0._1.Logic
         // Constructor: Define la cadena de conexión al inicializar el objeto
         public DatabaseConnection()
         {
-            connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Alejo\Desktop\Tareas y Otros\Algoritmos y estructura de datos 2\TP 2\TP 2 0.0.1\BD_TP_grupal_parte_2.accdb";
+            connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Alejo\Desktop\BD_TP_grupal_parte_2.accdb";
         }
 
         // Método para obtener la conexión a la base de datos
