@@ -28,24 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicioUsuarios));
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblBienvenidoAdministrador = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // pictureBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(69, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.pictureBox1.Image = global::TP_2___0._0._1.Properties.Resources.A;
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(169, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(209, 217);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblBienvenidoAdministrador
+            // 
+            this.lblBienvenidoAdministrador.AutoSize = true;
+            this.lblBienvenidoAdministrador.Font = new System.Drawing.Font("Broadway", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBienvenidoAdministrador.Location = new System.Drawing.Point(165, 252);
+            this.lblBienvenidoAdministrador.Name = "lblBienvenidoAdministrador";
+            this.lblBienvenidoAdministrador.Size = new System.Drawing.Size(194, 20);
+            this.lblBienvenidoAdministrador.TabIndex = 3;
+            this.lblBienvenidoAdministrador.Text = "Bienvenido, Usuario";
             // 
             // frmInicioUsuarios
             // 
-            this.ClientSize = new System.Drawing.Size(824, 408);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(543, 640);
+            this.Controls.Add(this.lblBienvenidoAdministrador);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "frmInicioUsuarios";
             this.Load += new System.EventHandler(this.frmInicioUsuarios_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -57,6 +74,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dgvTabla;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblBienvenidoAdministrador;
     }
 }

@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.OleDb;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP_2___0._0._1.forms;
+using TP_FINAL_By_Alejo.Clases;
 
 namespace TP_2___0._0._1
 {
     public partial class frmLogin : Form
+
     {
+
         public frmLogin()
         {
             InitializeComponent();
@@ -26,9 +22,9 @@ namespace TP_2___0._0._1
 
         private void btnRecupero_Click(object sender, EventArgs e)
         {
-            frmRecupero recupero = new frmRecupero();
-            this.Hide();
-            recupero.Show();
+            //  frmRecupero recupero = new frmRecupero();
+            //this.Hide();
+            // recupero.Show();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -37,63 +33,123 @@ namespace TP_2___0._0._1
             this.Hide();
             registrar.Show();
         }
-        
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            // Cadena de conexión a la base de datos de Access
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Alejo\Desktop\Tareas y Otros\Algoritmos y estructura de datos 2\TP 2\TP 2 0.0.1\BD_TP_grupal_parte_2.accdb";
+            // Instanciar la clase de conexión
+            ConectarBD.conexion conectarBD = new ConectarBD.conexion();
 
-            // Crear la consulta SQL para validar el usuario y la contraseña
-            string query = "SELECT COUNT(*) FROM Usuarios WHERE NombreUsuario = @username AND Contraseña = @password";
+            // Consulta SQL para validar el usuario y obtener el nivel
+            string query = "SELECT Nivel FROM Usuarios WHERE NombreUsuario = @username AND Contraseña = @password";
 
-            // Usar 'using' para asegurarnos de que la conexión se cierre correctamente
-            using (OleDbConnection connection = new OleDbConnection(connectionString))
+            // Crear los parámetros
+            OleDbParameter[] parametros = new OleDbParameter[]
             {
-                try
+        new OleDbParameter("@username", txtUsuario.Text),
+        new OleDbParameter("@password", txtConstraseña.Text)
+            };
+
+            try
+            {
+                // Abrir la conexión
+                conectarBD.AbrirConexion();
+
+                using (OleDbCommand command = new OleDbCommand(query, conectarBD.AbrirConexion()))
                 {
-                    // Abrir la conexión con la base de datos
-                    connection.Open();
+                    // Asignar los parámetros a la consulta
+                    command.Parameters.AddRange(parametros);
 
-                    // Crear un comando para ejecutar la consulta
-                    using (OleDbCommand command = new OleDbCommand(query, connection))
+                    // Ejecutar la consulta y obtener el nivel del usuario
+                    object resultado = command.ExecuteScalar();
+
+                    if (resultado != null)
                     {
-                        // Asignar los valores de los TextBox a los parámetros de la consulta
-                        command.Parameters.AddWithValue("@username", txtUsuario.Text);
-                        command.Parameters.AddWithValue("@password", txtConstraseña.Text);
+                        string nivel = resultado.ToString();
 
-                        // Ejecutar la consulta y obtener el número de coincidencias
-                        int count = (int)command.ExecuteScalar();
-
-                        // Validar si el usuario y la contraseña son correctos
-                        if (count > 0)
+                        if (nivel == "Administrador")
                         {
-                            // Si hay coincidencias, el inicio de sesión es correcto
+                            // Si el nivel es ADMINISTRADOR, abre el formulario InicioAdministrador
+                            frmInicioAdministrador frmInicioAdmin = new frmInicioAdministrador();
+                            this.Hide();
+                            frmInicioAdmin.Show();
+                        }
+                        else if (nivel == "Usuario")
+                        {
+                            // Si el nivel es USUARIO, abre el formulario InicioUsuarios
                             frmInicioUsuarios frminiciousuarios = new frmInicioUsuarios();
                             this.Hide();
                             frminiciousuarios.Show();
                         }
                         else
                         {
-                            // Si no hay coincidencias, el usuario o la contraseña son incorrectos
-                            MessageBox.Show("Los datos ingresados son incorrectos");
-                            txtUsuario.Clear();
-                            txtConstraseña.Clear();
+                            // Si el nivel es desconocido, lo cual dudo mucho que suseda
+                            MessageBox.Show("Nivel de usuario no reconocido");
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    // Manejar errores de conexión u otros problemas
-                    MessageBox.Show("Error al conectar con la base de datos: " + ex.Message);
-                }
-                finally
-                {
-                    // Asegurarse de que la conexión se cierre
-                    connection.Close();
+                    else
+                    {
+                        // Si no hay coincidencias, usuario o contraseña incorrectos
+                        MessageBox.Show("Los datos ingresados son incorrectos");
+                        txtUsuario.Clear();
+                        txtConstraseña.Clear();
+                    }
                 }
             }
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al conectar con la base de datos: " + ex.Message);
+            }
+            finally
+            {
+                // Cerrar la conexión
+                conectarBD.CerrarConexion();
+            }
         }
+
+
+
+
+
+
+
+
+        //Conectar con base y dirigir a INICIO USUARIO ⤵
+
+        /* private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            // Instanciar la clase de conexión
+            ConectarBD.conexion conectarBD = new ConectarBD.conexion();
+
+            // Consulta SQL para validar el usuario
+            string query = "SELECT COUNT(*) FROM Usuarios WHERE NombreUsuario = @username AND Contraseña = @password";
+
+            // Crear los parámetros
+            OleDbParameter[] parametros = new OleDbParameter[]
+            {
+            new OleDbParameter("@username", txtUsuario.Text),
+            new OleDbParameter("@password", txtConstraseña.Text)
+            };
+
+            // Se ejecuta la consulta y se obtienen los resultados
+            int count = conectarBD.EjecutarConsulta(query, parametros);
+
+            // Validar si el usuario y la contraseña son correctos
+            if (count > 0)
+            {
+                // Si hay coincidencias, el inicio de sesión es correcto
+                frmInicioUsuarios frminiciousuarios = new frmInicioUsuarios();
+                this.Hide();
+                frminiciousuarios.Show();
+            }
+            else
+            {
+                // Si no hay coincidencias se mostrara un mensaje de error
+                MessageBox.Show("Los datos ingresados son incorrectos");
+                txtUsuario.Clear();
+                txtConstraseña.Clear();
+            }
+        } */
+
 
 
     }
