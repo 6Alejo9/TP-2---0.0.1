@@ -31,7 +31,7 @@
             this.lblNombreYApellido = new System.Windows.Forms.Label();
             this.lblCorreoElectronico = new System.Windows.Forms.Label();
             this.lblContraseña = new System.Windows.Forms.Label();
-            this.txbNombreYApellido = new System.Windows.Forms.TextBox();
+            this.txbNombreUsuario = new System.Windows.Forms.TextBox();
             this.txbCorreoElectronico = new System.Windows.Forms.TextBox();
             this.txbContraseña = new System.Windows.Forms.TextBox();
             this.btnAceptarRegistro = new System.Windows.Forms.Button();
@@ -68,19 +68,19 @@
             this.lblContraseña.Text = "Contraseña";
             this.lblContraseña.Click += new System.EventHandler(this.lblContraseña_Click);
             // 
-            // txbNombreYApellido
+            // txbNombreUsuario
             // 
-            this.txbNombreYApellido.Location = new System.Drawing.Point(227, 37);
-            this.txbNombreYApellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txbNombreYApellido.Name = "txbNombreYApellido";
-            this.txbNombreYApellido.Size = new System.Drawing.Size(132, 22);
-            this.txbNombreYApellido.TabIndex = 4;
-            this.txbNombreYApellido.TextChanged += new System.EventHandler(this.txbNombreYApellido_TextChanged);
+            this.txbNombreUsuario.Location = new System.Drawing.Point(227, 37);
+            this.txbNombreUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.txbNombreUsuario.Name = "txbNombreUsuario";
+            this.txbNombreUsuario.Size = new System.Drawing.Size(132, 22);
+            this.txbNombreUsuario.TabIndex = 4;
+            this.txbNombreUsuario.TextChanged += new System.EventHandler(this.txbNombreYApellido_TextChanged);
             // 
             // txbCorreoElectronico
             // 
             this.txbCorreoElectronico.Location = new System.Drawing.Point(227, 100);
-            this.txbCorreoElectronico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbCorreoElectronico.Margin = new System.Windows.Forms.Padding(4);
             this.txbCorreoElectronico.Name = "txbCorreoElectronico";
             this.txbCorreoElectronico.Size = new System.Drawing.Size(132, 22);
             this.txbCorreoElectronico.TabIndex = 5;
@@ -89,7 +89,7 @@
             // txbContraseña
             // 
             this.txbContraseña.Location = new System.Drawing.Point(227, 158);
-            this.txbContraseña.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbContraseña.Margin = new System.Windows.Forms.Padding(4);
             this.txbContraseña.Name = "txbContraseña";
             this.txbContraseña.Size = new System.Drawing.Size(132, 22);
             this.txbContraseña.TabIndex = 6;
@@ -98,7 +98,7 @@
             // btnAceptarRegistro
             // 
             this.btnAceptarRegistro.Location = new System.Drawing.Point(98, 234);
-            this.btnAceptarRegistro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAceptarRegistro.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptarRegistro.Name = "btnAceptarRegistro";
             this.btnAceptarRegistro.Size = new System.Drawing.Size(202, 69);
             this.btnAceptarRegistro.TabIndex = 7;
@@ -109,7 +109,7 @@
             // btnRegresarAlLogin
             // 
             this.btnRegresarAlLogin.Location = new System.Drawing.Point(98, 311);
-            this.btnRegresarAlLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegresarAlLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegresarAlLogin.Name = "btnRegresarAlLogin";
             this.btnRegresarAlLogin.Size = new System.Drawing.Size(202, 69);
             this.btnRegresarAlLogin.TabIndex = 8;
@@ -126,7 +126,7 @@
             this.Controls.Add(this.btnAceptarRegistro);
             this.Controls.Add(this.txbContraseña);
             this.Controls.Add(this.txbCorreoElectronico);
-            this.Controls.Add(this.txbNombreYApellido);
+            this.Controls.Add(this.txbNombreUsuario);
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblCorreoElectronico);
             this.Controls.Add(this.lblNombreYApellido);
@@ -144,7 +144,7 @@
         private System.Windows.Forms.Label lblNombreYApellido;
         private System.Windows.Forms.Label lblCorreoElectronico;
         private System.Windows.Forms.Label lblContraseña;
-        private System.Windows.Forms.TextBox txbNombreYApellido;
+        private System.Windows.Forms.TextBox txbNombreUsuario;
         private System.Windows.Forms.TextBox txbCorreoElectronico;
         private System.Windows.Forms.TextBox txbContraseña;
         private System.Windows.Forms.Button btnAceptarRegistro;
