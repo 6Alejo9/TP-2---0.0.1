@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TP_FINAL_By_Alejo.Clases;
+using TP_2___0._0._1;
 
 namespace TP_2___0._0._1.Logic
 {

@@ -28,99 +28,109 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.lblNombreYApellido = new System.Windows.Forms.Label();
+            this.lblCorreoElectronico = new System.Windows.Forms.Label();
+            this.lblContraseña = new System.Windows.Forms.Label();
+            this.txbNombreYApellido = new System.Windows.Forms.TextBox();
+            this.txbCorreoElectronico = new System.Windows.Forms.TextBox();
+            this.txbContraseña = new System.Windows.Forms.TextBox();
             this.btnAceptarRegistro = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnRegresarAlLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lblNombreYApellido
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 38);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nombre y Apllido";
+            this.lblNombreYApellido.AutoSize = true;
+            this.lblNombreYApellido.Location = new System.Drawing.Point(15, 47);
+            this.lblNombreYApellido.Name = "lblNombreYApellido";
+            this.lblNombreYApellido.Size = new System.Drawing.Size(111, 16);
+            this.lblNombreYApellido.TabIndex = 1;
+            this.lblNombreYApellido.Text = "Nombre y Apllido";
+            this.lblNombreYApellido.Click += new System.EventHandler(this.lblNombreYApellido_Click);
             // 
-            // label2
+            // lblCorreoElectronico
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 88);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "CorreoElectronico";
+            this.lblCorreoElectronico.AutoSize = true;
+            this.lblCorreoElectronico.Location = new System.Drawing.Point(15, 108);
+            this.lblCorreoElectronico.Name = "lblCorreoElectronico";
+            this.lblCorreoElectronico.Size = new System.Drawing.Size(115, 16);
+            this.lblCorreoElectronico.TabIndex = 2;
+            this.lblCorreoElectronico.Text = "CorreoElectronico";
+            this.lblCorreoElectronico.Click += new System.EventHandler(this.lblCorreoElectronico_Click);
             // 
-            // label3
+            // lblContraseña
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 128);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Contraseña";
+            this.lblContraseña.AutoSize = true;
+            this.lblContraseña.Location = new System.Drawing.Point(15, 158);
+            this.lblContraseña.Name = "lblContraseña";
+            this.lblContraseña.Size = new System.Drawing.Size(76, 16);
+            this.lblContraseña.TabIndex = 3;
+            this.lblContraseña.Text = "Contraseña";
+            this.lblContraseña.Click += new System.EventHandler(this.lblContraseña_Click);
             // 
-            // textBox1
+            // txbNombreYApellido
             // 
-            this.textBox1.Location = new System.Drawing.Point(170, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.txbNombreYApellido.Location = new System.Drawing.Point(227, 37);
+            this.txbNombreYApellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbNombreYApellido.Name = "txbNombreYApellido";
+            this.txbNombreYApellido.Size = new System.Drawing.Size(132, 22);
+            this.txbNombreYApellido.TabIndex = 4;
+            this.txbNombreYApellido.TextChanged += new System.EventHandler(this.txbNombreYApellido_TextChanged);
             // 
-            // textBox2
+            // txbCorreoElectronico
             // 
-            this.textBox2.Location = new System.Drawing.Point(170, 81);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
+            this.txbCorreoElectronico.Location = new System.Drawing.Point(227, 100);
+            this.txbCorreoElectronico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbCorreoElectronico.Name = "txbCorreoElectronico";
+            this.txbCorreoElectronico.Size = new System.Drawing.Size(132, 22);
+            this.txbCorreoElectronico.TabIndex = 5;
+            this.txbCorreoElectronico.TextChanged += new System.EventHandler(this.txbCorreoElectronico_TextChanged);
             // 
-            // textBox3
+            // txbContraseña
             // 
-            this.textBox3.Location = new System.Drawing.Point(170, 128);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 6;
+            this.txbContraseña.Location = new System.Drawing.Point(227, 158);
+            this.txbContraseña.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbContraseña.Name = "txbContraseña";
+            this.txbContraseña.Size = new System.Drawing.Size(132, 22);
+            this.txbContraseña.TabIndex = 6;
+            this.txbContraseña.TextChanged += new System.EventHandler(this.txbContraseña_TextChanged);
             // 
             // btnAceptarRegistro
             // 
-            this.btnAceptarRegistro.Location = new System.Drawing.Point(123, 195);
+            this.btnAceptarRegistro.Location = new System.Drawing.Point(98, 234);
+            this.btnAceptarRegistro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAceptarRegistro.Name = "btnAceptarRegistro";
-            this.btnAceptarRegistro.Size = new System.Drawing.Size(75, 42);
+            this.btnAceptarRegistro.Size = new System.Drawing.Size(202, 69);
             this.btnAceptarRegistro.TabIndex = 7;
             this.btnAceptarRegistro.Text = "Aceptar";
             this.btnAceptarRegistro.UseVisualStyleBackColor = true;
+            this.btnAceptarRegistro.Click += new System.EventHandler(this.btnAceptarRegistro_Click);
             // 
-            // button2
+            // btnRegresarAlLogin
             // 
-            this.button2.Location = new System.Drawing.Point(123, 243);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 42);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "¿ Ya Estas Registrado ?";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRegresarAlLogin.Location = new System.Drawing.Point(98, 311);
+            this.btnRegresarAlLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegresarAlLogin.Name = "btnRegresarAlLogin";
+            this.btnRegresarAlLogin.Size = new System.Drawing.Size(202, 69);
+            this.btnRegresarAlLogin.TabIndex = 8;
+            this.btnRegresarAlLogin.Text = "¿ Ya Estas Registrado ?\r\nRegresa al Login";
+            this.btnRegresarAlLogin.UseVisualStyleBackColor = true;
+            this.btnRegresarAlLogin.Click += new System.EventHandler(this.btnRegresarAlLogin_Click);
             // 
             // frmRegistrar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(309, 366);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(412, 450);
+            this.Controls.Add(this.btnRegresarAlLogin);
             this.Controls.Add(this.btnAceptarRegistro);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Controls.Add(this.txbContraseña);
+            this.Controls.Add(this.txbCorreoElectronico);
+            this.Controls.Add(this.txbNombreYApellido);
+            this.Controls.Add(this.lblContraseña);
+            this.Controls.Add(this.lblCorreoElectronico);
+            this.Controls.Add(this.lblNombreYApellido);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmRegistrar";
             this.Text = "Registracion";
             this.Load += new System.EventHandler(this.Register_Load);
@@ -131,13 +141,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label lblNombreYApellido;
+        private System.Windows.Forms.Label lblCorreoElectronico;
+        private System.Windows.Forms.Label lblContraseña;
+        private System.Windows.Forms.TextBox txbNombreYApellido;
+        private System.Windows.Forms.TextBox txbCorreoElectronico;
+        private System.Windows.Forms.TextBox txbContraseña;
         private System.Windows.Forms.Button btnAceptarRegistro;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRegresarAlLogin;
     }
 }

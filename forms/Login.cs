@@ -2,7 +2,7 @@
 using System.Data.OleDb;
 using System.Windows.Forms;
 using TP_2___0._0._1.forms;
-using TP_FINAL_By_Alejo.Clases;
+using TP_2___0._0._1.Logic;
 
 namespace TP_2___0._0._1
 {
