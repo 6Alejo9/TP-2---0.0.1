@@ -53,6 +53,12 @@
     <Compile Include="forms\InicioAdministrador.Designer.cs">
       <DependentUpon>InicioAdministrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\RecuperoContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\RecuperoContraseña.Designer.cs">
+      <DependentUpon>RecuperoContraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\Registrar Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\InicioUsuarios.resx">
       <DependentUpon>InicioUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\RecuperoContraseña.resx">
+      <DependentUpon>RecuperoContraseña.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Registrar Usuario.resx">
       <DependentUpon>Registrar Usuario.cs</DependentUpon>

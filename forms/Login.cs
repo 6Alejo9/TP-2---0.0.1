@@ -22,9 +22,9 @@ namespace TP_2___0._0._1
 
         private void btnRecupero_Click(object sender, EventArgs e)
         {
-            //  frmRecupero recupero = new frmRecupero();
-            //this.Hide();
-            // recupero.Show();
+            RecuperoContraseña recupero = new RecuperoContraseña();
+            this.Hide();
+            recupero.Show();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
