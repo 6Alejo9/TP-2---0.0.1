@@ -6,48 +6,111 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TP_2___0._0._1;
+using System.Windows.Forms;
 
 namespace TP_2___0._0._1.Logic
-{
-    internal class ClaseDataGridView
+{ }
+    public class DataGridViewHelper
     {
-        public class CargarDatos
+        private OleDbConnection conexion;
+
+        public DataGridViewHelper(string connectionString)
         {
-            // Instancia de la clase de conexión
-            private ConectarBD.conexion conectarBD = new ConectarBD.conexion();
+            conexion = new OleDbConnection(connectionString);
+        }
 
-            // Método para obtener los datos de una tabla
-            public DataTable ObtenerDatosDeTabla(string nombreTabla)
+        public void LlenarDataGridView(DataGridView dataGridView, string consultaSQL)
+        {
+            try
             {
-                DataTable dataTable = new DataTable();
+                OleDbDataAdapter adaptador = new OleDbDataAdapter(consultaSQL, conexion);
+                DataTable tabla = new DataTable();
+                adaptador.Fill(tabla);
+                dataGridView.DataSource = tabla;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar datos: " + ex.Message);
+            }
+        }
 
-                // Consulta SQL para obtener los datos de la tabla que se pasa como parámetro
-                string query = $"SELECT * FROM {nombreTabla}";
+        public void AgregarUsuario(string nombre, string correo, string contraseña, string nivel)
+        {
+            try
+            {
+                string query = "INSERT INTO Usuarios (NombreUsuario, CorreoElectronico, Contraseña, Nivel) VALUES (?, ?, ?, ?)";
+                OleDbCommand command = new OleDbCommand(query, conexion);
+                command.Parameters.AddWithValue("?", nombre);
+                command.Parameters.AddWithValue("?", correo);
+                command.Parameters.AddWithValue("?", contraseña);
+                command.Parameters.AddWithValue("?", nivel);
 
-                try
-                {
-                    // Abrir la conexión a la base de datos
-                    conectarBD.AbrirConexion();
+                conexion.Open();
+                command.ExecuteNonQuery();
+                MessageBox.Show("Usuario agregado correctamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al agregar usuario: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
 
-                    // Usar un OleDbDataAdapter para ejecutar la consulta y llenar el DataTable
-                    using (OleDbDataAdapter dataAdapter = new OleDbDataAdapter(query, conectarBD.AbrirConexion()))
-                    {
-                        // Llenar el DataTable con los datos obtenidos
-                        dataAdapter.Fill(dataTable);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Error al cargar los datos: " + ex.Message);
-                }
-                finally
-                {
-                    // Cerrar la conexión a la base de datos
-                    conectarBD.CerrarConexion();
-                }
+        public void ModificarUsuario(string nombre, string correo, string contraseña, string nivel)
+        {
+            try
+            {
+                string query = "UPDATE Usuarios SET CorreoElectronico = ?, Contraseña = ?, Nivel = ? WHERE NombreUsuario = ?";
+                OleDbCommand command = new OleDbCommand(query, conexion);
+                command.Parameters.AddWithValue("?", correo);
+                command.Parameters.AddWithValue("?", contraseña);
+                command.Parameters.AddWithValue("?", nivel);
+                command.Parameters.AddWithValue("?", nombre);
 
-                return dataTable;  // Retornar el DataTable lleno con los datos
+                conexion.Open();
+                int filasActualizadas = command.ExecuteNonQuery();
+                if (filasActualizadas > 0)
+                    MessageBox.Show("Usuario modificado correctamente.");
+                else
+                    MessageBox.Show("Usuario no encontrado.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al modificar usuario: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+
+        public void EliminarUsuario(string nombre)
+        {
+            try
+            {
+                string query = "DELETE FROM Usuarios WHERE NombreUsuario = ?";
+                OleDbCommand command = new OleDbCommand(query, conexion);
+                command.Parameters.AddWithValue("?", nombre);
+
+                conexion.Open();
+                int filasEliminadas = command.ExecuteNonQuery();
+                if (filasEliminadas > 0)
+                    MessageBox.Show("Usuario eliminado correctamente.");
+                else
+                    MessageBox.Show("Usuario no encontrado.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar usuario: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Close();
             }
         }
     }
-}
+
+
